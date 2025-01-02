@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://calculator/./src/index.js?");
+eval("// css\n// import \"./components/css/general.css\"\n\n//# sourceURL=webpack://calculator/./src/index.js?");
 
 /***/ })
 

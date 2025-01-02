@@ -10,7 +10,7 @@ module.exports = {
   },
   module: {
     rules: [
-      // Babel
+      // Babel-loader
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
@@ -21,6 +21,8 @@ module.exports = {
           }
         }
       },
+
+      // CSS-loader
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -33,8 +35,19 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({
     template: './src/index.html',
-    filename: 'main.html',
-    inject: 'head',
-    favicon: './src/favicon.ico',
+    filename: 'main.html'
   })],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 9000,
+    open: true,
+    hot: false,
+    liveReload: true,
+    historyApiFallback: {
+      index: 'main.html',
+    },
+  },
 };

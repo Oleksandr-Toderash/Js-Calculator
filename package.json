@@ -7,7 +7,8 @@
     "sass": "^1.83.0",
     "sass-loader": "^16.0.4",
     "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   },
   "name": "calculator",
   "version": "1.0.0",
@@ -100,7 +101,8 @@
     "wildcard": "^2.0.1"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "serve": "webpack serve"
   },
   "keywords": [],
   "author": "",
