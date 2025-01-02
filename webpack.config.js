@@ -8,5 +8,25 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [new HtmlWebpackPlugin()],
+  module: {
+    rules: [
+      // Babel
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+    ]
+  },
+  plugins: [new HtmlWebpackPlugin({
+    template: './src/index.html',
+    filename: 'main.html',
+    inject: 'head',
+    favicon: './src/favicon.ico',
+  })],
 };
